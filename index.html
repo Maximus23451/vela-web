@@ -23,6 +23,7 @@
     </a>
     <nav class="topnav" aria-label="Primary">
       <a href="#features">Features</a>
+      <a href="#security">Security</a>
       <a href="#providers">Providers</a>
       <a href="#screens">Screens</a>
       <a href="#get-it">Get it</a>
@@ -100,18 +101,6 @@
         </article>
 
         <article class="card">
-          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10 V7 a4 4 0 0 1 8 0 v3"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
-          <h3>Encrypted at rest, honestly</h3>
-          <p>API keys and A2A tokens live in the Android Keystore via EncryptedSharedPreferences (AES-256), hardware-backed where available — excluded from cloud auto-backup entirely. Your messages travel however the endpoint you chose does: HTTPS to a cloud provider, plain HTTP by design on your own LAN. No chat client can honestly call that end-to-end encrypted — the model has to read your prompt to answer it.</p>
-        </article>
-
-        <article class="card">
-          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7 h8 M8 11 h8 M8 15 h5"/></svg>
-          <h3>One encrypted backup</h3>
-          <p>Every conversation, profile and key, every A2A token, every persona and prompt, your app-lock PIN — one AES-256-GCM export behind a passphrase that's never stored. Lose the passphrase, lose the backup; that's the whole point.</p>
-        </article>
-
-        <article class="card">
           <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5 V12 L17 15"/></svg>
           <h3>Fifteen ways to look at it</h3>
           <p>Nord, Dracula, Catppuccin, Gruvbox, Tokyo Night, Rosé Pine, One Dark, Monokai and more, plus Material You dynamic color and true-black AMOLED — each a faithful recreation, not a filter.</p>
@@ -127,9 +116,54 @@
     </div>
   </section>
 
-  <section class="band alt" id="providers">
+  <section class="band alt" id="security">
     <div class="band-inner">
-      <p class="section-eyebrow">02 — Compatibility</p>
+      <p class="section-eyebrow">02 — Guarded</p>
+      <h2>What's actually protected, layer by layer</h2>
+      <p class="band-lede">Not a blanket claim — here's exactly what's encrypted, what isn't, and why.</p>
+      <div class="security-matrix">
+        <div class="security-row">
+          <div class="security-what">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10 V7 a4 4 0 0 1 8 0 v3"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
+            <h3>Credentials</h3>
+          </div>
+          <p>API keys and A2A tokens live in the Android Keystore via EncryptedSharedPreferences (AES-256), hardware-backed where available — excluded from cloud auto-backup entirely.</p>
+        </div>
+        <div class="security-row">
+          <div class="security-what">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.6"/><path d="M5 6 v12 a7 2.6 0 0 0 14 0 V6"/><path d="M5 12 a7 2.6 0 0 0 14 0"/></svg>
+            <h3>Conversation history</h3>
+          </div>
+          <p>The local database — every conversation, every message — is SQLCipher-encrypted at rest behind a random key generated on-device and stored the same Keystore-backed way as your API keys.</p>
+        </div>
+        <div class="security-row">
+          <div class="security-what">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7 h8 M8 11 h8 M8 15 h5"/></svg>
+            <h3>Backups &amp; exports</h3>
+          </div>
+          <p>The full backup, and a profile export that includes keys, both go through the same AES-256-GCM envelope behind a passphrase you set — never stored, so losing it loses the file. Exporting profiles without keys carries no secret, so it stays plain JSON.</p>
+        </div>
+        <div class="security-row">
+          <div class="security-what">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7 L5 17 M12 7 L19 17"/></svg>
+            <h3>Network transport</h3>
+          </div>
+          <p>HTTPS to any cloud provider, as usual. LM Studio, Ollama and A2A default to plain HTTP on your own LAN — matching how those servers actually run — but an https:// URL works too, self-signed certificate included: trust it once by its fingerprint, the same way SSH trusts a host key, and a certificate that changes afterward is rejected rather than silently re-accepted.</p>
+        </div>
+        <div class="security-row">
+          <div class="security-what">
+            <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9 9 L15 15 M15 9 L9 15"/></svg>
+            <h3>What this isn't</h3>
+          </div>
+          <p>End-to-end encrypted. The model has to read your plaintext prompt to answer it — no chat client talking to an LLM can honestly claim otherwise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="providers">
+    <div class="band-inner">
+      <p class="section-eyebrow">03 — Compatibility</p>
       <h2>Every route in, one wire format</h2>
       <p class="band-lede">Eleven provider presets over the OpenAI-compatible chat dialect, plus a native Agent2Agent client for autonomous agents. Point it anywhere; the request pipeline doesn't change underneath you.</p>
       <ul class="chip-row" id="provider-chips">
@@ -139,9 +173,9 @@
     </div>
   </section>
 
-  <section class="band" id="screens">
+  <section class="band alt" id="screens">
     <div class="band-inner">
-      <p class="section-eyebrow">03 — Charted</p>
+      <p class="section-eyebrow">04 — Charted</p>
       <h2>What's actually on screen</h2>
       <div class="phone-row">
         <figure class="phone">
@@ -160,10 +194,10 @@
     </div>
   </section>
 
-  <section class="band alt" id="get-it">
+  <section class="band" id="get-it">
     <div class="band-inner get-it-inner">
       <div>
-        <p class="section-eyebrow">04 — Get it</p>
+        <p class="section-eyebrow">05 — Get it</p>
         <h2>Sideload the APK, or build it yourself</h2>
         <p class="band-lede">
           Not on the Play Store — this is a personal-infrastructure app, distributed as a

@@ -255,13 +255,12 @@ p { margin: 0; }
 
 .card-grid {
   margin-top: 44px;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
 }
-@media (max-width: 900px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .card-grid { grid-template-columns: 1fr; } }
 
 .card {
@@ -277,6 +276,33 @@ p { margin: 0; }
 }
 .card h3 { font-size: 1.08rem; font-weight: 600; font-family: var(--font-body); }
 .card p { color: var(--ink-dim); font-size: 0.94rem; }
+
+/* ============================================================
+   Security matrix
+   ============================================================ */
+
+.security-matrix {
+  margin-top: 40px;
+  display: flex; flex-direction: column;
+}
+.security-row {
+  display: grid; grid-template-columns: 240px 1fr; gap: 8px 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+.security-row:first-child { border-top: 1px solid var(--line-strong); }
+.security-what {
+  display: flex; align-items: center; gap: 10px;
+}
+.security-what h3 {
+  font-size: 1.02rem; font-weight: 600; font-family: var(--font-body); color: var(--ink);
+}
+.security-what .card-icon { width: 20px; height: 20px; flex-shrink: 0; }
+.security-row p { margin: 0; color: var(--ink-dim); font-size: 0.95rem; max-width: 62ch; }
+
+@media (max-width: 700px) {
+  .security-row { grid-template-columns: 1fr; gap: 8px; }
+}
 
 /* ============================================================
    Provider chips
