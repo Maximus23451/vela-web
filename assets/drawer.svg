@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="780" viewBox="0 0 380 780" font-family="Roboto, system-ui, sans-serif">
+  <defs><clipPath id="s2"><rect x="8" y="8" width="364" height="764" rx="34"/></clipPath></defs>
+  <rect x="0" y="0" width="380" height="780" rx="42" fill="#1b1b21"/>
+  <rect x="8" y="8" width="364" height="764" rx="34" fill="#131318"/>
+  <g clip-path="url(#s2)">
+    <!-- Scrim over chat -->
+    <rect x="312" y="8" width="60" height="764" fill="#000" opacity="0.4"/>
+    <!-- Drawer sheet -->
+    <rect x="8" y="8" width="300" height="764" fill="#1b1b21"/>
+
+    <text x="28" y="48" font-size="22" font-weight="600" fill="#e5e1e9">Vela</text>
+    <text x="276" y="48" font-size="18" fill="#c9c5d0">🗀+</text>
+
+    <!-- New chat -->
+    <rect x="20" y="64" width="276" height="48" rx="14" fill="#4b3f8f"/>
+    <text x="38" y="93" font-size="15" font-weight="600" fill="#e9ddff">＋  New chat</text>
+
+    <!-- Search -->
+    <rect x="20" y="124" width="276" height="44" rx="12" fill="#1f1f25" stroke="#47464f"/>
+    <text x="40" y="151" font-size="13" fill="#938f99">🔍  Search conversations</text>
+
+    <text x="28" y="196" font-size="11" font-weight="600" fill="#cfbcff" letter-spacing="1">PINNED</text>
+    <rect x="16" y="206" width="284" height="48" rx="12" fill="#332d41"/>
+    <text x="30" y="228" font-size="14" fill="#e5e1e9">📌 Kotlin coroutines help</text>
+    <text x="30" y="245" font-size="11" fill="#938f99">Sure — structured concurrency…</text>
+
+    <text x="26" y="284" font-size="11" fill="#c9c5d0">🗀 Work</text>
+    <rect x="16" y="294" width="284" height="46" rx="12" fill="transparent"/>
+    <text x="30" y="316" font-size="14" fill="#e5e1e9">Release notes draft</text>
+    <text x="30" y="333" font-size="11" fill="#938f99">Here is a concise changelog…</text>
+    <text x="284" y="320" font-size="16" fill="#938f99">⋮</text>
+
+    <text x="28" y="370" font-size="11" font-weight="600" fill="#cfbcff" letter-spacing="1">CHATS</text>
+    <g font-size="14" fill="#e5e1e9">
+      <text x="30" y="402">PDF summary: Q3 report</text>
+      <text x="30" y="446">Trip itinerary for Japan</text>
+      <text x="30" y="490">Refactor this function</text>
+      <text x="30" y="534">Explain transformers</text>
+    </g>
+    <g font-size="11" fill="#938f99">
+      <text x="30" y="419">Key points: revenue up 12%…</text>
+      <text x="30" y="463">Day 1: Tokyo, Day 2: Kyoto…</text>
+      <text x="30" y="507">You can extract the loop…</text>
+      <text x="30" y="551">Attention is a mechanism…</text>
+    </g>
+
+    <!-- Footer -->
+    <rect x="8" y="712" width="300" height="60" fill="#1b1b21"/>
+    <line x1="20" y1="712" x2="296" y2="712" stroke="#2a2930"/>
+    <text x="30" y="748" font-size="14" fill="#c9c5d0">⚙  Settings</text>
+  </g>
+</svg>

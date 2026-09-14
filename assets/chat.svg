@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="780" viewBox="0 0 380 780" font-family="Roboto, system-ui, sans-serif">
+  <defs>
+    <clipPath id="screen"><rect x="8" y="8" width="364" height="764" rx="34"/></clipPath>
+  </defs>
+  <rect x="0" y="0" width="380" height="780" rx="42" fill="#1b1b21"/>
+  <rect x="8" y="8" width="364" height="764" rx="34" fill="#fcf8ff"/>
+  <g clip-path="url(#screen)">
+    <!-- Top bar -->
+    <rect x="8" y="8" width="364" height="64" fill="#fcf8ff"/>
+    <path d="M28 32 h20 M28 40 h20 M28 48 h20" stroke="#47464f" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="64" y="38" font-size="15" font-weight="600" fill="#1b1b21">qwen2.5-7b-instruct ▾</text>
+    <text x="64" y="54" font-size="11" fill="#78767f">LM Studio (local)</text>
+    <text x="312" y="46" font-size="20" fill="#47464f">⋮</text>
+    <rect x="284" y="26" width="18" height="3" rx="1.5" fill="#47464f"/>
+    <rect x="284" y="33" width="18" height="3" rx="1.5" fill="#47464f"/>
+
+    <!-- Assistant message -->
+    <rect x="20" y="92" width="22" height="22" rx="7" fill="#6750a4"/>
+    <text x="26" y="108" font-size="13" fill="#fff">✦</text>
+    <text x="50" y="107" font-size="11" fill="#78767f">Assistant</text>
+    <text x="22" y="134" font-size="13.5" fill="#1b1b21">Here's a quick example in Kotlin:</text>
+
+    <!-- Code block -->
+    <rect x="22" y="148" width="336" height="104" rx="12" fill="#e5e1e9"/>
+    <rect x="22" y="148" width="336" height="28" rx="12" fill="#eae7ef"/>
+    <text x="34" y="166" font-size="11" fill="#47464f">kotlin</text>
+    <text x="312" y="166" font-size="11" fill="#47464f">⧉ Copy</text>
+    <text x="34" y="194" font-size="12" font-family="monospace" fill="#6750a4">fun <tspan fill="#1b1b21">greet(</tspan><tspan fill="#00897b">name</tspan><tspan fill="#1b1b21">: String) {</tspan></text>
+    <text x="46" y="212" font-size="12" font-family="monospace" fill="#1b1b21">println(<tspan fill="#2e7d32">"Hi, $name"</tspan>)</text>
+    <text x="34" y="230" font-size="12" font-family="monospace" fill="#1b1b21">}</text>
+    <text x="34" y="270" font-size="13" fill="#47464f">⧉  ↻  🔊</text>
+
+    <!-- User bubble -->
+    <rect x="150" y="300" width="208" height="44" rx="20" fill="#6750a4"/>
+    <rect x="150" y="300" width="208" height="44" rx="20" ry="6" fill="#6750a4"/>
+    <text x="170" y="327" font-size="13.5" fill="#fff">Show me a greet() function</text>
+
+    <!-- Assistant streaming -->
+    <rect x="20" y="372" width="22" height="22" rx="7" fill="#6750a4"/>
+    <text x="26" y="388" font-size="13" fill="#fff">✦</text>
+    <text x="50" y="387" font-size="11" fill="#78767f">Assistant</text>
+    <text x="22" y="414" font-size="13.5" fill="#1b1b21">Sure — you can also add a default</text>
+    <text x="22" y="432" font-size="13.5" fill="#1b1b21">value to make the argument optional</text>
+    <circle cx="26" cy="452" r="3.5" fill="#6750a4"/>
+    <circle cx="38" cy="452" r="3.5" fill="#6750a4" opacity="0.6"/>
+    <circle cx="50" cy="452" r="3.5" fill="#6750a4" opacity="0.3"/>
+
+    <!-- Input bar -->
+    <rect x="8" y="700" width="364" height="72" fill="#fcf8ff"/>
+    <circle cx="36" cy="736" r="20" fill="#eae7ef"/>
+    <text x="29" y="742" font-size="16" fill="#47464f">📎</text>
+    <rect x="64" y="716" width="252" height="40" rx="20" fill="#eae7ef"/>
+    <text x="80" y="741" font-size="13.5" fill="#78767f">Message…</text>
+    <circle cx="344" cy="736" r="22" fill="#6750a4"/>
+    <path d="M344 746 v-18 M336 736 l8 -8 l8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

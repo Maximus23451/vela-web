@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V.E.L.A.</title>
+<meta name="description" content="An offline-first Android chat client for LM Studio, Ollama, and any OpenAI-compatible or Agent2Agent server — with Tailscale mesh discovery and no cloud dependency required.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E1A'/%3E%3Ccircle cx='9' cy='11' r='2.1' fill='%23E8B84B'/%3E%3Ccircle cx='23' cy='9' r='1.6' fill='%23E8B84B'/%3E%3Ccircle cx='24' cy='22' r='2.1' fill='%23E8B84B'/%3E%3Ccircle cx='10' cy='23' r='1.6' fill='%23E8B84B'/%3E%3Cpath d='M9 11 L23 9 M23 9 L24 22 M24 22 L10 23 M10 23 L9 11' stroke='%23E8B84B' stroke-width='1' opacity='0.7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="wordmark" href="#top">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="6" cy="8" r="1.6" fill="currentColor"/><circle cx="18" cy="6" r="1.2" fill="currentColor"/><circle cx="19" cy="17" r="1.6" fill="currentColor"/><circle cx="7" cy="18" r="1.2" fill="currentColor"/><path d="M6 8 L18 6 M18 6 L19 17 M19 17 L7 18 M7 18 L6 8" stroke="currentColor" stroke-width="0.9" opacity="0.8"/></svg>
+      <span>V.E.L.A.</span>
+    </a>
+    <nav class="topnav" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#providers">Providers</a>
+      <a href="#screens">Screens</a>
+      <a href="#get-it">Get it</a>
+    </nav>
+    <a class="topbar-gh" href="https://github.com/Maximus23451/vela-chat" aria-label="View source on GitHub">
+      <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-sky" aria-hidden="true">
+      <svg viewBox="0 0 900 560" class="constellation" preserveAspectRatio="xMidYMid slice">
+        <g class="bg-stars">
+          <circle cx="62" cy="94" r="1.1"/><circle cx="140" cy="48" r="0.9"/><circle cx="210" cy="140" r="1.3"/>
+          <circle cx="310" cy="60" r="0.8"/><circle cx="420" cy="30" r="1"/><circle cx="560" cy="70" r="1.2"/>
+          <circle cx="700" cy="40" r="0.9"/><circle cx="800" cy="110" r="1.1"/><circle cx="840" cy="220" r="0.8"/>
+          <circle cx="120" cy="260" r="1"/><circle cx="60" cy="380" r="1.2"/><circle cx="40" cy="470" r="0.9"/>
+          <circle cx="150" cy="510" r="1.1"/><circle cx="300" cy="500" r="0.8"/><circle cx="480" cy="520" r="1"/>
+          <circle cx="640" cy="500" r="1.3"/><circle cx="780" cy="460" r="0.9"/><circle cx="860" cy="380" r="1"/>
+          <circle cx="500" cy="180" r="0.7"/><circle cx="620" cy="230" r="0.9"/><circle cx="360" cy="240" r="0.7"/>
+          <circle cx="250" cy="350" r="0.8"/><circle cx="720" cy="320" r="0.7"/><circle cx="440" cy="420" r="0.8"/>
+        </g>
+        <g class="asterism">
+          <path class="lines" d="M 250 190 L 560 150 L 600 380 L 300 400 Z" />
+          <g class="stars">
+            <circle cx="250" cy="190" r="5.5" /><text x="250" y="172">γ Velorum · Regor</text>
+            <circle cx="560" cy="150" r="4" /><text x="560" y="132">δ Velorum</text>
+            <circle cx="600" cy="380" r="4.6" /><text x="612" y="404">κ Velorum · Markeb</text>
+            <circle cx="300" cy="400" r="3.6" /><text x="300" y="424">μ Velorum</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Android · offline-first</p>
+      <h1>V.E.L.A.</h1>
+      <p class="tagline">Versatile Engine for Local AI</p>
+      <p class="lede">
+        A chat client that answers to your own hardware first. Point it at LM Studio
+        or Ollama on your LAN, reach any OpenAI-compatible cloud provider when you
+        want to, or talk to remote autonomous agents over your own Tailscale mesh —
+        every key stays on the device, encrypted, never in a cloud backup.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="download-btn" href="https://github.com/Maximus23451/vela-chat/releases/latest">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 1a.75.75 0 0 1 .75.75v7.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V1.75A.75.75 0 0 1 8 1ZM2 12.75a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"/></svg>
+          <span id="download-label">Download latest APK</span>
+        </a>
+        <a class="btn btn-ghost" href="#get-it">Build from source →</a>
+      </div>
+      <p class="hero-meta" id="release-meta">Checking latest release…</p>
+    </div>
+  </section>
+
+  <section class="band" id="features">
+    <div class="band-inner">
+      <p class="section-eyebrow">01 — Why</p>
+      <h2>Your infrastructure. Your keys. Your call.</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="7" cy="17" r="1" fill="currentColor" stroke="none"/></svg>
+          <h3>Local-first, cloud-optional</h3>
+          <p>Talks natively to LM Studio and Ollama on your own network. OpenAI, OpenRouter, DeepSeek, Moonshot, Zhipu, Gemini and Qwen are there when you want them — never required.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="5" r="2.4"/><circle cx="19" cy="5" r="2.4"/><circle cx="12" cy="19" r="2.4"/><path d="M7 6 L17 6 M6.5 7 L11 17.5 M17.5 7 L13 17.5"/></svg>
+          <h3>Agent2Agent (A2A)</h3>
+          <p>Discover and message remote autonomous agents over your own Tailscale mesh. Peer tables give one profile several gateway identities; agent "arms" let a regular chat model call a remote agent as a tool and relay the answer in-persona.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10 V7 a4 4 0 0 1 8 0 v3"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
+          <h3>Encrypted end to end</h3>
+          <p>API keys and A2A tokens live in the Android Keystore via EncryptedSharedPreferences, hardware-backed where available — excluded from cloud auto-backup entirely, on-disk or off.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7 h8 M8 11 h8 M8 15 h5"/></svg>
+          <h3>One encrypted backup</h3>
+          <p>Every conversation, profile and key, every A2A token, every persona and prompt, your app-lock PIN — one AES-256-GCM export behind a passphrase that's never stored. Lose the passphrase, lose the backup; that's the whole point.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5 V12 L17 15"/></svg>
+          <h3>Fifteen ways to look at it</h3>
+          <p>Nord, Dracula, Catppuccin, Gruvbox, Tokyo Night, Rosé Pine, One Dark, Monokai and more, plus Material You dynamic color and true-black AMOLED — each a faithful recreation, not a filter.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3 v8 a3 3 0 0 0 6 0 V3"/><path d="M12 16 v5 M9 21 h6"/><path d="M6 10 a6 6 0 0 0 12 0"/></svg>
+          <h3>Voice, vision, documents</h3>
+          <p>Speech-to-text and read-aloud, image attachments for vision models, PDFs extracted and inlined on-device — plus eight agent personas to talk to before you've written a single system prompt.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="providers">
+    <div class="band-inner">
+      <p class="section-eyebrow">02 — Compatibility</p>
+      <h2>Every route in, one wire format</h2>
+      <p class="band-lede">Eleven provider presets over the OpenAI-compatible chat dialect, plus a native Agent2Agent client for autonomous agents. Point it anywhere; the request pipeline doesn't change underneath you.</p>
+      <ul class="chip-row" id="provider-chips">
+        <li>LM Studio</li><li>Ollama</li><li>A2A Agent</li><li>OpenAI</li><li>OpenRouter</li>
+        <li>DeepSeek</li><li>Moonshot</li><li>Zhipu</li><li>Gemini</li><li>Qwen</li><li>Custom</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" id="screens">
+    <div class="band-inner">
+      <p class="section-eyebrow">03 — Charted</p>
+      <h2>What's actually on screen</h2>
+      <div class="phone-row">
+        <figure class="phone">
+          <div class="phone-frame" aria-hidden="true"></div>
+          <img src="assets/chat.svg" alt="Chat screen: streaming assistant reply with a syntax-highlighted code block, message actions, and a composer with attachment and prompt-library buttons.">
+          <figcaption>Chat — streaming, code blocks, message actions</figcaption>
+        </figure>
+        <figure class="phone">
+          <img src="assets/drawer.svg" alt="Conversation drawer showing folders, pinned chats, and swipe-to-archive gestures.">
+          <figcaption>Drawer — folders, pins, swipe gestures</figcaption>
+        </figure>
+        <figure class="phone">
+          <img src="assets/profile-editor.svg" alt="API profile editor with provider picker, base URL, API key field, and A2A agent contacts section.">
+          <figcaption>Profile editor — provider, key, agent contacts</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="get-it">
+    <div class="band-inner get-it-inner">
+      <div>
+        <p class="section-eyebrow">04 — Get it</p>
+        <h2>Sideload the APK, or build it yourself</h2>
+        <p class="band-lede">
+          Not on the Play Store — this is a personal-infrastructure app, distributed as a
+          signed release APK from GitHub. minSdk 26, targetSdk 35. Debug and release
+          install as two separate apps, so trying it never touches an existing install.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/Maximus23451/vela-chat/releases/latest">Latest release ↓</a>
+          <a class="btn btn-ghost" href="https://github.com/Maximus23451/vela-chat">Source on GitHub →</a>
+        </div>
+      </div>
+      <pre class="terminal" aria-label="Build from source"><code><span class="c-comment"># clone and build</span>
+git clone https://github.com/Maximus23451/vela-chat.git
+<span class="c-cmd">cd</span> vela-chat
+./gradlew :app:assembleRelease --no-configuration-cache
+
+<span class="c-comment"># JDK 17 required — see scripts/provision-build-env.sh</span></code></pre>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="6" cy="8" r="1.6" fill="currentColor"/><circle cx="18" cy="6" r="1.2" fill="currentColor"/><circle cx="19" cy="17" r="1.6" fill="currentColor"/><circle cx="7" cy="18" r="1.2" fill="currentColor"/><path d="M6 8 L18 6 M18 6 L19 17 M19 17 L7 18 M7 18 L6 8" stroke="currentColor" stroke-width="0.9" opacity="0.8"/></svg>
+      <span>V.E.L.A.</span>
+      <span class="footer-dim">— Versatile Engine for Local AI</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Maximus23451/vela-chat">Repository</a>
+      <a href="https://github.com/Maximus23451/vela-chat/blob/main/LICENSE">MIT License</a>
+      <a href="https://github.com/Maximus23451">github.com/Maximus23451</a>
+    </div>
+  </div>
+  <p class="footer-fine">Built with Kotlin, Jetpack Compose, Hilt, and Room. Not affiliated with LM Studio, OpenAI, Anthropic, Google, Alibaba, or OpenWebUI.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
