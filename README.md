@@ -16,7 +16,7 @@ the page itself needing an edit.
 index.html       All markup, inline SVG icons (no emoji, no icon font)
 css/style.css     Design tokens (light + dark), layout, components
 js/main.js        Live release fetch — the only script on the page
-assets/           Phone-frame UI mockups, reused from the app repo's docs/mockups
+assets/           Real screenshots from a running debug build (chat, drawer, profile editor)
 ```
 
 ## Local preview

@@ -101,8 +101,8 @@
 
         <article class="card">
           <svg class="card-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10 V7 a4 4 0 0 1 8 0 v3"/><circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/></svg>
-          <h3>Encrypted end to end</h3>
-          <p>API keys and A2A tokens live in the Android Keystore via EncryptedSharedPreferences, hardware-backed where available — excluded from cloud auto-backup entirely, on-disk or off.</p>
+          <h3>Encrypted at rest, honestly</h3>
+          <p>API keys and A2A tokens live in the Android Keystore via EncryptedSharedPreferences (AES-256), hardware-backed where available — excluded from cloud auto-backup entirely. Your messages travel however the endpoint you chose does: HTTPS to a cloud provider, plain HTTP by design on your own LAN. No chat client can honestly call that end-to-end encrypted — the model has to read your prompt to answer it.</p>
         </article>
 
         <article class="card">
@@ -145,16 +145,15 @@
       <h2>What's actually on screen</h2>
       <div class="phone-row">
         <figure class="phone">
-          <div class="phone-frame" aria-hidden="true"></div>
-          <img src="assets/chat.svg" alt="Chat screen: streaming assistant reply with a syntax-highlighted code block, message actions, and a composer with attachment and prompt-library buttons.">
+          <img src="assets/chat.png" alt="Chat screen showing a streaming assistant reply with a syntax-highlighted Kotlin code block, above a composer with attachment, prompt-library, and temperature controls.">
           <figcaption>Chat — streaming, code blocks, message actions</figcaption>
         </figure>
         <figure class="phone">
-          <img src="assets/drawer.svg" alt="Conversation drawer showing folders, pinned chats, and swipe-to-archive gestures.">
+          <img src="assets/drawer.png" alt="Conversation drawer showing a pinned chat, a folder, and recent conversations.">
           <figcaption>Drawer — folders, pins, swipe gestures</figcaption>
         </figure>
         <figure class="phone">
-          <img src="assets/profile-editor.svg" alt="API profile editor with provider picker, base URL, API key field, and A2A agent contacts section.">
+          <img src="assets/profile-editor.png" alt="API profile editor with the provider picker open on Gemini, the auto-filled Google endpoint, an API key field, and the A2A agent contacts section.">
           <figcaption>Profile editor — provider, key, agent contacts</figcaption>
         </figure>
       </div>
