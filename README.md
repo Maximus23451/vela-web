@@ -19,6 +19,20 @@ js/main.js        Live release fetch — the only script on the page
 assets/           Real screenshots from a running debug build (chat, drawer, profile editor)
 ```
 
+## Sections and keeping them honest
+
+`01 Why` (features) · `02 Guarded` (per-layer security breakdown) · `03 Compatibility`
+(provider presets) · `04 Charted` (screenshots) · `05 Get it` (download / build).
+
+Every claim on the page was checked against the app's source for **2.5.0**
+(2026-09-15). The Security section describes exactly what ships — credentials in the
+Keystore, SQLCipher database, AES-256-GCM backups and keyed exports, optional local
+HTTPS with trust-on-first-use pinning, and an explicit "not end-to-end encrypted" row.
+When the app changes, re-verify the affected section against the code **before** pushing
+here, and don't publish a feature until the release that contains it is downloadable.
+Screenshots come from the debug build (`com.vela.chat.debug`) with demo data, cropped
+to the app area; never use shots showing real conversations, contacts or files.
+
 ## Local preview
 
 No build step — just serve the folder:
